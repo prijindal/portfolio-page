@@ -8,3 +8,29 @@
       [src]="section.img">
   </div>
 </div>
+
+<div class="work-titles-text">
+  <div class="work-titles-container title-before">
+    <ul [style.margin-top]="-24*marginTop + 'px'">
+      <li *ngFor="let section of sections" class="work-text-inner">
+        <span class="line"></span>
+        <a class="section-text">{{section.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="work-titles-container title">
+    <ul [style.margin-top]="-54*marginTop + 'px'">
+      <li *ngFor="let section of sections" class="work-text-inner">
+        <a class="section-text">{{section.text}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="work-titles-container title-after">
+    <ul [style.margin-top]="-29.5*marginTop + 'px'">
+      <li *ngFor="let section of sections" class="work-text-inner">
+        <span class="line"></span>
+        <a class="section-text">{{section.text}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

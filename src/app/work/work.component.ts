@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 
 declare var $: any;
 
@@ -9,11 +9,14 @@ declare var $: any;
 })
 export class WorkComponent {
   sections = [];
-  marginLeft = 0;
+  marginTop = 0;
 
-  constructor() {
+  constructor(
+    private ref: ChangeDetectorRef
+  ) {
     for(let i =1;i <= 5; ++i) {
       this.sections.push({
+        text: 'Text for Section #' + i,
         id: 'section' + i.toString(),
         img: 'https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg' + i +'.jpg'
       });
@@ -29,22 +32,22 @@ export class WorkComponent {
       responsiveWidth: 640
     });
     this.initResize();
+    this.watchScroll();
   }
 
   initResize() {
-    $('img').load(() => {
-      this.resizeImage();
-    });
     $(window).resize(() => {
       this.resizeImage();
     })
+    $('img').load(() => {
+      this.resizeImage();
+    });
   }
 
   resizeImage() {
     var windowWidth = $(window).width();
     var imgWidth = $('img').width();
     var diff = windowWidth - imgWidth;
-    console.log(diff, windowWidth, imgWidth);
     var options = {}
     if (diff >= 0) {
       options['width'] = '100%';
@@ -57,6 +60,15 @@ export class WorkComponent {
       options['margin-left'] = diff/2;
     }
     $('img').css(options);
+  }
+
+  watchScroll() {
+    $(window).scroll(() => {
+      var height = $('html').height();
+      this.marginTop = 675*($(window).scrollTop()/height)/54;
+      // $('.work-titles-container').css({'margin-top': marginTop});
+      // this.ref.detectChanges();
+    })
   }
 
   ngOnDestroy() {
