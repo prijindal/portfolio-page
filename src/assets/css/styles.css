@@ -1,9 +1,12 @@
-html,body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  color:#ddd;
-  min-width:223px;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
 }

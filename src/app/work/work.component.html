@@ -1,0 +1,10 @@
+<div id="fullpage">
+	<div
+  *ngFor="let section of sections"
+  class="section"
+  [id]="section.id">
+      <img
+      class="section-inner"
+      [src]="section.img">
+  </div>
+</div>

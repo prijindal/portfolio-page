@@ -1,0 +1,18 @@
+#fullpage {
+  overflow: hidden;
+}
+
+.section{
+  .section-inner {
+    transition: transform 20s, width 1s,height 1s,margin-left 1s;
+    background-size: cover;
+    background-position: 50%;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  &.active {
+    .section-inner {
+      transform: matrix(1.15, 0, 0, 1.15, 0, 0);
+    }
+  }
+}

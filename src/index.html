@@ -10,7 +10,19 @@
   <meta name="description" content="<%= webpackConfig.metadata.title %>">
 
   <link rel="stylesheet" href="/assets/css/loading.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"
+  integrity="sha384-mimphncWi0uu9ecpX1wtKHojBKyU9d+mU5ebbzfqJGWk2+hoXs/usOb0yeNTblE4"
+  crossorigin="anonymous">
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.4/jquery.fullPage.min.css"
+  integrity="sha384-Fh9GcR9CA9+GpHqqdY6unrzApytZyo6pGQ0NNLK6b5RIAVs1Xpy8Qh5EzZwSVX62"
+  crossorigin="anonymous">
+
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <% if (webpackConfig.htmlElements.headTags) { %>
@@ -25,17 +37,20 @@
 
 <body>
 
-  <my-app>
-    <div class="loading-container">
-      <div class="loading-squares">
-        <div class="square-1">Loading...</div>
-      </div>
-    </div>
-  </my-app>
+  <my-app></my-app>
 
   <% if (webpackConfig.metadata.isDevServer) { %>
   <!-- Webpack Dev Server reload -->
   <script src="/webpack-dev-server.js"></script>
   <% } %>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.4/jquery.fullPage.min.js"
+  integrity="sha384-5zdiJFHeM5tFbff0ftTBJS+jbxVYtdxBAnbealdYpWriwzY5OBWPKPckbTKcaV98"
+  crossorigin="anonymous"></script>
 </body>
 </html>
