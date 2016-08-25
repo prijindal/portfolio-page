@@ -2,6 +2,10 @@
 
 # Priyanshu Jindal Portfolio
 
+Working On:
+Width: all
+Height:620 to 700px
+
 > This Project was made using [Angular 2](https://angular.io) ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
 [Http](https://angular.io/docs/js/latest/api/http/),
 [Services](https://gist.github.com/gdi2290/634101fec1671ee12b3e#_follow_@AngularClass_on_twitter),

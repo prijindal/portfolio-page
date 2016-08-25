@@ -10,6 +10,7 @@ declare var $: any;
 export class WorkComponent {
   sections = [];
   marginTop = 0;
+  windowHeight: number;
 
   constructor(
     private ref: ChangeDetectorRef
@@ -28,8 +29,7 @@ export class WorkComponent {
       'verticalCentered': false,
       scrollBar: true,
       css3: true,
-      scrollingSpeed: 700,
-      responsiveWidth: 640
+      scrollingSpeed: 700
     });
     this.initResize();
     this.watchScroll();
@@ -60,14 +60,14 @@ export class WorkComponent {
       options['margin-left'] = diff/2;
     }
     $('img').css(options);
+    this.windowHeight = $(window).height();
   }
 
   watchScroll() {
     $(window).scroll(() => {
       var height = $('html').height();
-      this.marginTop = 675*($(window).scrollTop()/height)/54;
-      // $('.work-titles-container').css({'margin-top': marginTop});
-      // this.ref.detectChanges();
+      var windowHeight = $(window).height();
+      this.marginTop = windowHeight*($(window).scrollTop()/height)/54;
     })
   }
 

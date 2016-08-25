@@ -18,26 +18,26 @@
 }
 
 @mixin work-inner() {
-.work-text-inner {
-  color: #fff;
-  letter-spacing: .240em;
-  line-height: 40px;
-  opacity: .5;
-  text-align: center;
-  text-transform: uppercase;
+  .work-text-inner {
+    color: #fff;
+    letter-spacing: .240em;
+    line-height: 40px;
+    opacity: .5;
+    text-align: center;
+    text-transform: uppercase;
 
-  .line {
-    display: block;
-    margin: auto;
-    width: 1px;
-    height: 20px;
-    background: rgba(255,255,255,0.30);
-  }
+    .line {
+      display: block;
+      margin: auto;
+      width: 1px;
+      height: 20px;
+      background: rgba(255,255,255,0.30);
+    }
 
-  &:first-child .line {
-    display: none;
+    &:first-child .line {
+      display: none;
+    }
   }
-}
 }
 
 .work-titles-text {
@@ -72,13 +72,19 @@
       font-size: 1.2rem;
       bottom: 10px;
       height: 271px;
-      @include work-inner();
+      ul {
+        bottom: 28px;
+        li {
+          margin-bottom: 9px;
+        }
+        @include work-inner();
+      }
     }
 
     &.title {
       z-index: 5;
       font-size: 2rem;
-      height: 80px;
+      min-height: 80px;
       top: 50%;
       transform: translateY(-50%);
       li {
@@ -96,7 +102,7 @@
         border: 0;
         line-height: 75px;
         height: 75px;
-        padding-bottom: 52px;
+        padding-bottom: 50px;
       }
     }
   }
